@@ -1,0 +1,5 @@
+- hosts: web_srv
+  name: play-demo
+  tasks:
+  - name: verify host connectivity
+    ping: 

@@ -1,0 +1,14 @@
+---
+
+- name: ansible.builtin.copy module
+  hosts: web_srv
+  gather_facts: no
+
+  tasks:
+    - name: copy file
+      ansible.builtin.copy:
+        src: demo.conf
+        dest: /home/ubuntu/demo.conf
+        owner: ubuntu
+        group: ubuntu
+        mode: '0644'

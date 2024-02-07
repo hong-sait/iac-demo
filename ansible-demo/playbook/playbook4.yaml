@@ -1,0 +1,10 @@
+- name: Hello World
+  hosts: localhost
+
+  vars:
+    greetings: "Hello from vars"
+
+  tasks:
+    - name: Hello World
+      debug:
+        msg: "{{ greetings }}"

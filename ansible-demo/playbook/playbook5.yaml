@@ -1,0 +1,13 @@
+- name: Hello World
+  hosts: localhost
+
+  vars:
+    greetings: "Hello from vars"
+
+  vars_files:
+    - "vars/greeting_vars.yaml"
+
+  tasks:
+    - name: Hello World
+      debug:
+        msg: "{{ ext_greetings }}"

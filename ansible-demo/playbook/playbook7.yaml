@@ -1,0 +1,20 @@
+- name: Hello World
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    test:
+    - test1
+    - test2
+    - test3
+
+  vars_files:
+    - "vars/esxi_hosts.yaml"
+
+  tasks:
+    - name: Loop demo
+      debug:
+        msg: "{{ item }}"
+      # with_items: "{{ test }}" # Old syntax
+      loop: "{{ test }}"
+      

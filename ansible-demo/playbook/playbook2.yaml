@@ -1,0 +1,5 @@
+- name: module-demo 
+  hosts: web_srv
+  tasks:
+  - name: query hostname and related settings
+    ansible.builtin.command: hostnamectl

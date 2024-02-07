@@ -1,0 +1,14 @@
+---
+
+- name: Install lighttpd package on Ubuntu Linux servers
+  hosts: web_srv
+  become: true
+  become_method: sudo
+  gather_facts: no
+
+  tasks:
+    - name: Update repositories and install lighttpd package
+      ansible.builtin.apt:
+        name: lighttpd
+        update_cache: true
+        state: present
